@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
+<meta name="description" content="复合文字（Compound Literals）阅读代码时发现了这行 1setsockopt(sock,SOL_SOCKET,SO_REUSEADDR,&amp;amp;(int)&amp;#123;1&amp;#125;,sizeof(int)); 发现之前没有见过这种写法 1&amp;amp;(int)&amp;#123;1&amp;#125; 上网搜索发现Compound Literals是c99添加的新特性，gcc在c90和c++中也支持">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Qs&#39;s BLOG">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/06/09/复合文字（Compound_Literals）/index.html">
 <meta property="og:site_name" content="Qs&#39;s BLOG">
+<meta property="og:description" content="复合文字（Compound Literals）阅读代码时发现了这行 1setsockopt(sock,SOL_SOCKET,SO_REUSEADDR,&amp;amp;(int)&amp;#123;1&amp;#125;,sizeof(int)); 发现之前没有见过这种写法 1&amp;amp;(int)&amp;#123;1&amp;#125; 上网搜索发现Compound Literals是c99添加的新特性，gcc在c90和c++中也支持">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-17T07:32:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Qs&#39;s BLOG">
+<meta name="twitter:description" content="复合文字（Compound Literals）阅读代码时发现了这行 1setsockopt(sock,SOL_SOCKET,SO_REUSEADDR,&amp;amp;(int)&amp;#123;1&amp;#125;,sizeof(int)); 发现之前没有见过这种写法 1&amp;amp;(int)&amp;#123;1&amp;#125; 上网搜索发现Compound Literals是c99添加的新特性，gcc在c90和c++中也支持">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/09/复合文字（Compound_Literals）/"/>
 
 
 
 
 
-  <title>Qs's BLOG</title>
+  <title> | Qs's BLOG</title>
   
 
 
@@ -140,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,9 +227,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -256,9 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/09/复合文字（Compound_Literals）/" itemprop="url">未命名</a></h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -270,7 +271,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-10T00:39:49+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T16:39:49+00:00">
                 2018-06-10
               </time>
             
@@ -308,9 +309,7 @@
       
 
       
-        
-          
-            <h3 id="复合文字（Compound-Literals）"><a href="#复合文字（Compound-Literals）" class="headerlink" title="复合文字（Compound Literals）"></a>复合文字（Compound Literals）</h3><p>阅读代码时发现了这行</p>
+        <h3 id="复合文字（Compound-Literals）"><a href="#复合文字（Compound-Literals）" class="headerlink" title="复合文字（Compound Literals）"></a>复合文字（Compound Literals）</h3><p>阅读代码时发现了这行</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsockopt(sock,SOL_SOCKET,SO_REUSEADDR,&amp;(<span class="keyword">int</span>)&#123;<span class="number">1</span>&#125;,<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br></pre></td></tr></table></figure>
 <p>发现之前没有见过这种写法</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;(<span class="keyword">int</span>)&#123;<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
@@ -342,8 +341,6 @@
 <p>例如，如果数组复合文字foo的实例出现在函数内部，在C++中后续任何使用foo的结果都是未定义的，因为数组foo的生命周期在其声明之后就结束了。</p>
 <p>作为优化，在g++中有时会给复合文字数组更长的生命周期，例如在函数之外或者用<code>const</code>修饰，如果foo及其初始化程序具有<code>char * const</code>类型而不是<code>char *</code>类型的元素，亦或者foo是全局变量，这个数组则有静态存储的生命周期，但是，避免在C++代码中使用复合文字是最安全的。</p>
 
-          
-        
       
     </div>
     
@@ -360,140 +357,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Qs's BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/05/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T18:37:03+08:00">
-                2018-05-05
-              </time>
+              <a href="/2018/05/05/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -503,10 +388,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -514,6 +400,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -534,8 +424,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -577,6 +476,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#复合文字（Compound-Literals）"><span class="nav-number">1.</span> <span class="nav-text">复合文字（Compound Literals）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -717,6 +632,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
